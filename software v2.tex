@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage[default]{sourcesanspro}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+\hypersetup{ pdfnewwindow=true }
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\fontseries{sb}\selectfont\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{6pt}{6pt}
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlist[itemize]{itemsep=-3pt, leftmargin=12pt, topsep=0pt} %%% Test various topsep values to fix vertical spacing errors
+
+\newcommand{\textsb}[1]{{\fontseries{sb}\selectfont #1}}
+\newcommand{\icon}[1]{\raisebox{-0.1em}{#1}}
+
+% resume starts here
+\begin{document}
+
+\centerline{\huge \textbf{Noah Sun}}
+
+\vspace{-6pt}
+
+% contact information
+\begin{center}
+\icon{\faPhone}\ (647)~700-5886 \;
+\icon{\faEnvelope}\ \href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;
+\icon{\faGlobe}\ \href{https://www.sunnoah.ca}{sunnoah.ca} \;
+\icon{\faGithub}\ \href{https://github.com/LegendaryArk}{github.com/LegendaryArk} \;
+\icon{\faLinkedin}\ \href{https://www.linkedin.com/in/sunnoah/}{/in/sunnoah}
+\end{center}
+
+\vspace{-9pt}
+
+% education section
+\section*{Education}
+\textsb{University of Waterloo} -- BASc. in Mechatronics Engineering (Candidate) \hfill September 2025 -- April 2030 \\[2pt]
+\hspace{12pt} Relevant Coursework: Algorithms and Data Structures, Circuits, Digital Logic \hfill GPA: 3.92 / 4.00 \\
+
+% experience section
+\section*{Experience}
+
+\textsb{Full Stack Software Engineer} -- Thames Valley Financial (Incoming) \hfill September 2026 -- December 2026 \\
+\begin{itemize}
+    \item Building full stack features for a financial administration platform, including internal tools and product interfaces
+    \item Working AI-forward, steering agentic coding tools toward production-ready features in a small engineering team
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Forward Deployed Engineer} -- Ascendance Foundry \hfill January 2026 -- April 2026 \\
+\begin{itemize}
+  \item Developed 5 AI workflow automations, introducing input validation and reducing human error by 80\%
+  \item Built a GTM automation that uses Python Playwright to find leads and generate outreach emails using Claude API
+  \item Implemented 2 ETL pipelines using Azure Data Factory, delivering per-project statistic dashboards in Power BI
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Co-founder and Lead Developer} -- Elapse | \href{https://play.google.com/store/apps/details?id=com.elapseapp.elapse_app&hl=en_CA}{\icon{\faGooglePlay}\ \underline{Google Play}} | \href{https://apps.apple.com/ca/app/elapse/id6596757269}{\icon{\faApple}\ \underline{App Store}} | \href{https://github.com/elapse-app/elapse}{\icon{\faGithub}\ \underline{GitHub}} \hfill June 2024 -- August 2025 \\
+\begin{itemize}
+  \item Led 4 developers to build an iOS/Android Flutter app serving the 100k+ member VEX Robotics Competition community with real-time schedules, rankings, and match data, receiving 3500+ downloads and a 5.0-star rating
+  \item Designed adaptive match times and scouting forms, increasing team productivity at tournaments by 35\%
+  \item Integrated Firebase and Cloud Functions to sync data between team members, reducing scouting times by 30\%
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Embedded Flight Software Developer} -- Waterloo Aerial Robotics Group \hfill September 2025 -- Current \\
+\begin{itemize}
+  \item Led 4 engineers to develop a 32 MB flash driver using C++ on the STM32 Nucleo to store config details and crash logs
+  \item Built an RTOS-integrated Flash Translation Layer with garbage collection and wear leveling, enhancing flash longevity
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{V5RC Team Programming Lead} -- Checkmate Robotics | \href{https://youtu.be/Ix-q2ixYf8Y}{\icon{\faYoutube}\ \underline{Demo Video}} | \href{https://github.com/16868C/VRC2425-HighStakes}{\icon{\faGithub}\ \underline{GitHub}} \hfill June 2019 -- August 2025 \\
+\begin{itemize}
+  \item Led team of 6 in robot design and library architecture, winning the Create (innovation) Award at VEX Worlds 2024
+  \item Engineered ArkLib, a modular C++ motion control library focused on scalability and flexibility using OOP, qualifying the team to VEX Worlds in 5 consecutive years and winning the Think (programming) Award at international events
+  \item Designed and tuned PID and control algorithms, achieving 1”/1° precision movements across 300+ matches
+\end{itemize}
+
+% projects section 
+\section*{Projects}
+
+\textsb{Redact} | \href{https://redact.sunnoah.ca}{\icon{\faGlobe} \underline{Live Demo}} | \href{https://github.com/LegendaryArk/Redact}{\icon{\faGithub}\ \underline{GitHub}}
+\begin{itemize}
+    \item Built a full-stack face-blurring app (FastAPI, React, Docker) combining RetinaFace detection with OpenCV tracking
+    \item Achieved 97\% accuracy by detecting every 5th frame with IoU-tracked fill-in, cutting processing times by 80\% to 4 FPS
+    \item Designed dual-signal scene-cut detection and EMA smoothing to keep blur boxes stable across shot changes
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Signal - LLM Agent Simulation Platform} | \href{https://github.com/LegendaryArk/Signal}{\icon{\faGithub}\ \underline{GitHub}}
+\begin{itemize}
+    \item Built a multi-layer LLM agent simulation and dashboard in Python and JavaScript with clean separation across a simulation kernel, Claude tool-use harness, and FastAPI/SSE server
+    \item Implemented structured tool-use over Claude API with prompt caching, reducing per-step latency and token cost
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{CityWatch} | \href{https://github.com/LegendaryArk/CityWatch}{\icon{\faGithub}\ \underline{GitHub}}
+\begin{itemize}
+    \item Led a team of 4 to build a reporting platform using React Native to analyze 50k+ reports to identify high-risk zones
+    \item Trained a MobileNetV2 road defect classifier with OpenCV preprocessing pipeline, achieving 95\%+ accuracy
+    \item Forecasted 30-365 day risk heatmaps from spatial incident patterns and features stored in a PostGIS database
+\end{itemize}
+
+% \textsb{ArkLib}  \textit{C++, Git} \hfill June 2020 -- July 2025 \\
+% \begin{itemize}
+%   \item Modularized odometry and control algorithms using OOP, enabling seamless integration of \textbf{5+ robot configurations}
+%   \item Enhanced motion algorithms for precision, achieving \textbf{1”/1° accuracy} via improved PID tuning and settling conditions
+%   \item Designed reusable libraries and APIs, cutting integration time by \textbf{30\%} and standardizing code across \textbf{5+ seasons}
+% \end{itemize}
+
+% skills section
+\section*{Technical Skills}
+\textsb{Languages:} C/C++, Python, Java, JavaScript, TypeScript, Dart \\[-1pt]
+\textsb{Frameworks/AI:} ROS2, OpenCV, TensorFlow, Claude API, FastAPI, Express.js, Node.js, React Native, Flutter, Matplotlib \\[-1pt]
+\textsb{Data/Backend:} PostgreSQL, MySQL, Microsoft Azure, Firebase, Pandas \\[-1pt]
+\textsb{Developer Tools:} Git, Docker, Linux, GitHub Actions, Foxglove, REST APIs, SSE, Microsoft Power Apps, MS Office \\[-1pt]
+\textsb{Hardware:} Raspberry Pi, STM32 Nucleo, NVIDIA Jetson Nano, Arduino
+
+\end{document}

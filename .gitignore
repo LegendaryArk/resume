@@ -1,0 +1,22 @@
+# Core auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.toc
+
+# Bibliography files
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Indexing files
+*.idx
+*.ind
+*.ilg
+*.out
+
+# Final PDF output
+*.pdf
