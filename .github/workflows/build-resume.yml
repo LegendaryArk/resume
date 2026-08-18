@@ -66,16 +66,18 @@ jobs:
                 npm ci
                 npm run deploy
             
-            - name: Send resume PDFs via ntfy
+            - name: Email resume PDFs
               if: success()
-              run: |
-                curl -T robotics.pdf \
-                        -H "Filename: Noah_Sun_Resume_Robotics.pdf" \
-                        -H "Title: Resume Exported" \
-                        -H "Message: Latest resume exported successfully." \
-                        ntfy.sh/resume-exports
-                curl -T software.pdf \
-                        -H "Filename: Noah_Sun_Resume_Software.pdf" \
-                        -H "Title: Resume Exported" \
-                        -H "Message: Latest resume exported successfully." \
-                        ntfy.sh/resume-exports
+              uses: dawidd6/action-send-mail@v3
+              with:
+                server_address: smtp.gmail.com
+                server_port: 465
+                username: ${{ secrets.EMAIL_USERNAME }}
+                password: ${{ secrets.EMAIL_PASSWORD }}
+                subject: "Exported Resumes"
+                to: noahsun0418@gmail.com
+                from: GitHub Actions
+                body: "Latest exported resumes attached."
+                attachments: |
+                    sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
+                    sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf          
