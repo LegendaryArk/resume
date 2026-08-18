@@ -62,9 +62,6 @@ jobs:
               env:
                 GH_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
               run: |
-                rm -rf node_modules/.cache/gh-pages
-                git remote set-url origin https://github.com
-
                 npm ci
                 npm run deploy
             
