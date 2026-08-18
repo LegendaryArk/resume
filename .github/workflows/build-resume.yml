@@ -62,7 +62,8 @@ jobs:
               env:
                 REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
               run: |
-                git remote set-url origin https://x-access-token:${REPO_TOKEN}@://github.com
+                git remote set-url origin https://github.com
+                git config --global http.https://github.com "Authorization: Basic $(echo -n "x-access-token:${REPO_TOKEN}" | base64)"
 
                 npm ci
                 npm run deploy
