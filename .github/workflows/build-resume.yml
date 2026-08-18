@@ -5,6 +5,7 @@ on:
         paths:
             - 'robotices.tex'
             - 'software.tex'
+    workflow_dispatch:
 
 jobs:
     build:
