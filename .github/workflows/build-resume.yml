@@ -48,6 +48,7 @@ jobs:
                 git add public/resumes/
                 git diff --staged --quiet || git commit -m "Auto-update resume PDFs"
                 git push
+                npm ci
                 npm run deploy
             
             - name: Send resume PDFs via ntfy
