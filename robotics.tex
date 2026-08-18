@@ -28,7 +28,7 @@ right=0.5in]{geometry}              % specify right page margin
 
 % format bullet points: size, white space above and below, white space between bullets
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\setlist[itemize]{itemsep=-1pt, leftmargin=12pt, topsep=0pt} %%% Test various topsep values to fix vertical spacing errors
+\setlist[itemize]{itemsep=-3pt, leftmargin=12pt, topsep=0pt} %%% Test various topsep values to fix vertical spacing errors
 
 \newcommand{\textsb}[1]{{\fontseries{sb}\selectfont #1}}
 \newcommand{\icon}[1]{\raisebox{0em}{#1}}
@@ -102,19 +102,19 @@ right=0.5in]{geometry}              % specify right page margin
 % projects section 
 \section*{Projects}
 
+\textsb{Redact} | \href{https://redact.sunnoah.ca}{\icon{\faGlobe} \underline{Live Demo}} | \href{https://github.com/LegendaryArk/Redact}{\icon{\faGithub}\ \underline{GitHub}}
+\begin{itemize}
+    \item Built a detect-track pipeline utilizing RetinaFace and OpenCV, achieving 97\% accuracy by detecting every 5th frame with IoU-tracked fill-in, cutting processing times by 80\% to 4 FPS
+    \item Designed dual-signal scene-cut detection and EMA smoothing to keep blur boxes stable across shot changes
+\end{itemize}
+
+\vspace{6pt}
+
 \textsb{AutoFleet} | \href{https://github.com/LegendaryArk/TIC_AutoFleet}{\icon{\faGithub}\ \underline{GitHub}}
 \begin{itemize}
     \item Built a multi-robot central arbiter with space-time A* path planning to avoid collisions during coordinated traversal
     \item Programmed ESP32 WiFi-UART bridge with a TCP server to relay JSON commands, enabling wireless robot control
     \item Integrated AprilTag localization with EMA-smoothed pose fused with wheel odometry, boosting precision by 30\%
-\end{itemize}
-
-\vspace{6pt}
-
-\textsb{Decks - Card Deck Shuffler} | \href{https://github.com/LegendaryArk/CardShuffler}{\icon{\faGithub}\ \underline{GitHub}}
-\begin{itemize}
-    \item Architected a full embedded system for an automated playing card shuffler built on a custom 3D-printed chassis
-    \item Developed embedded firmware in MicroPython on Raspberry Pi Pico for motor control, sensor polling, and status LED
 \end{itemize}
 
 \vspace{6pt}
