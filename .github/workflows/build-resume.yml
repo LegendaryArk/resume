@@ -1,0 +1,65 @@
+name: Build Resume
+
+on:
+    push:
+        paths:
+            - 'robotices.tex'
+            - 'software.tex'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Compile robotics resume
+              uses: xu-cheng/latex-action@v3
+              with:
+                root_file: robotics.tex
+                working_directory: .
+            
+            - name: Compile software resume
+              uses: xu-cheng/latex-action@v3
+              with:
+                root_file: software.tex
+                working_directory: .
+            
+            - name: Checkout website repo
+              uses: actions/checkout@v4
+              with:
+                repository: LegendaryArk/sunnoah.ca
+                token: ${{ secrets.WEBSITE_REPO_TOKEN }}
+                path: website-repo
+            
+            - name: Copy PDFs to website repo
+              run: |
+                mkdir -p website-repo/public/resumes
+                rm -f website-repo/public/resumes/noah_sun_resume_robotics.pdf
+                rm -f website-repo/public/resumes/noah_sun_resume_software.pdf
+                cp robotics.pdf website-repo/public/resumes/noah_sun_resume_robotics.pdf
+                cp software.pdf website-repo/public/resumes/noah_sun_resume_software.pdf
+                echo "{\"last_updated\": \"$(date -u +'%Y-%m-%d')\"}" > website-repo/public/resumes/last_updated.json
+            
+            - name: Commit and push to website repo
+              working-directory: website-repo
+              run: |
+                git config user.name "github-actions"
+                git config user.email "actions@github.com"
+                git add public/resumes/
+                git diff --staged --quiet || git commit -m "Auto-update resume PDFs"
+                git push
+                npm run deploy
+            
+            - name: Send resume PDFs via ntfy
+              if: success()
+              run: |
+                curl -T robotics.pdf \
+                        -H "Filename: Noah_Sun_Resume_Robotics.pdf" \
+                        -H "Title: Resume Exported" \
+                        -H "Message: Latest resume exported successfully." \
+                        ntfy.sh/resume-exports
+                curl -T software.pdf \
+                        -H "Filename: Noah_Sun_Resume_Software.pdf" \
+                        -H "Title: Resume Exported" \
+                        -H "Message: Latest resume exported successfully." \
+                        ntfy.sh/resume-exports
