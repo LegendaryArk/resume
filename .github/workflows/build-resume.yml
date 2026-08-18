@@ -59,7 +59,11 @@ jobs:
             
             - name: Deploy website
               working-directory: sunnoah.ca-repo
+              env:
+                REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
               run: |
+                git remote set-url origin https://x-access-token:${REPO_TOKEN}@://github.com
+
                 npm ci
                 npm run deploy
             
