@@ -47,7 +47,7 @@ jobs:
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
                 cp robotics.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                 cp software.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
-                cp software.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
+                cp embedded.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
                 echo "{\"last_updated\": \"$(date -u +'%Y-%m-%d')\"}" > sunnoah.ca-repo/public/resumes/last_updated.json
             
             - name: Commit and push to sunnoah.ca repo
