@@ -5,6 +5,7 @@ on:
         paths:
             - 'robotices.tex'
             - 'software.tex'
+            - 'embedded.tex'
     workflow_dispatch:
 
 jobs:
@@ -24,6 +25,12 @@ jobs:
               with:
                 root_file: software.tex
                 working_directory: .
+
+            - name: Compile embedded resume
+              uses: xu-cheng/latex-action@v3
+              with:
+                root_file: embedded.tex
+                working_directory: .
             
             - name: Checkout sunnoah.ca repo
               uses: actions/checkout@v4
@@ -37,8 +44,10 @@ jobs:
                 mkdir -p sunnoah.ca-repo/public/resumes
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
+                rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
                 cp robotics.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                 cp software.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
+                cp software.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
                 echo "{\"last_updated\": \"$(date -u +'%Y-%m-%d')\"}" > sunnoah.ca-repo/public/resumes/last_updated.json
             
             - name: Commit and push to sunnoah.ca repo
@@ -80,4 +89,5 @@ jobs:
                 body: "Latest exported resumes attached."
                 attachments: |
                     sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
-                    sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf          
+                    sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
+                    sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
