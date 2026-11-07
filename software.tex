@@ -28,7 +28,7 @@ right=0.5in]{geometry}              % specify right page margin
 
 % format bullet points: size, white space above and below, white space between bullets
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\setlist[itemize]{itemsep=-3pt, leftmargin=12pt, topsep=0pt} %%% Test various topsep values to fix vertical spacing errors
+\setlist[itemize]{itemsep=-3pt, leftmargin=12pt, topsep=-2pt} %%% Test various topsep values to fix vertical spacing errors
 
 \newcommand{\textsb}[1]{{\fontseries{sb}\selectfont #1}}
 \newcommand{\icon}[1]{\raisebox{0em}{#1}}
@@ -42,11 +42,16 @@ right=0.5in]{geometry}              % specify right page margin
 
 % contact information
 \begin{center}
-\icon{\faPhone}\ (647)~700-5886 \;
-\icon{\faEnvelope}\ \href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;
-\icon{\faGlobe}\ \href{https://www.sunnoah.ca}{sunnoah.ca} \;
-\icon{\faGithub}\ \href{https://github.com/LegendaryArk}{github.com/LegendaryArk} \;
-\icon{\faLinkedin}\ \href{https://www.linkedin.com/in/sunnoah/}{/in/sunnoah}
+% \icon{\faPhone}\ (647)~700-5886 \;
+% \icon{\faEnvelope}\ \href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;
+% \icon{\faGlobe}\ \href{https://www.sunnoah.ca}{sunnoah.ca} \;
+% \icon{\faGithub}\ \href{https://github.com/LegendaryArk}{github.com/LegendaryArk} \;
+% \icon{\faLinkedin}\ \href{https://www.linkedin.com/in/sunnoah/}{/in/sunnoah}
+(647)~700-5886 \;\;|\;\;
+\href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;\;|\;\;
+\href{https://www.sunnoah.ca}{\underline{sunnoah.ca}} \;\;|\;\;
+\href{https://github.com/LegendaryArk}{\underline{github.com/LegendaryArk}} \;\;|\;\;
+\href{https://www.linkedin.com/in/sunnoah/}{\underline{/in/sunnoah}}
 \end{center}
 
 \vspace{-9pt}
@@ -61,35 +66,49 @@ right=0.5in]{geometry}              % specify right page margin
 
 \textsb{Full Stack Software Engineer} -- Thames Valley Financial \hfill September 2026 -- Current \\
 \begin{itemize}
-    \item Building full stack features for a financial administration platform, including internal tools and product interfaces
     \item Replaced a legacy Excel model with \textbf{3 actuarial calculators} on a Python engine that runs \textbf{360+ scenarios/second}
+    \item Designed a daily fund-trading pipeline for a retirement plan by building a Python model, validated by \textbf{87 test cases}
+    \item Built an interactive compliance engine demo of \textbf{12 scenarios} across \textbf{8 flags}, used to show its versatility and uses
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Humanoid Perception Software Developer} -- WATonomous \hfill September 2026 -- Current \\
+\begin{itemize}
+    \item Built a ROS2 pipeline that localizes a shuttlecock from RGB-D data using YOLO detection and depth back-projection
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Embedded Flight Software Developer} -- Waterloo Aerial Robotics Group \hfill September 2025 -- Current \\
+\begin{itemize}
+    \item Led 4 engineers to build a 32 MB C++ flash storage layer with integrity checks, verified by \textbf{19 GoogleTest} unit tests
+    \item Cut flash I/O CPU time \textbf{15\%} by building a non-blocking, RTOS-integrated state machine with async queues
 \end{itemize}
 
 \vspace{6pt}
 
 \textsb{Forward Deployed Engineer} -- Ascendance Foundry \hfill January 2026 -- April 2026 \\
 \begin{itemize}
-  \item Developed \textbf{5 AI workflow automations}, introducing input validation and reducing human error by \textbf{80\%}
-  \item Built a GTM automation that uses Python Playwright to find leads and generate outreach emails using Claude API
-  \item Implemented \textbf{2 ETL pipelines} using Azure Data Factory, delivering per-project statistic dashboards in Power BI
+    \item Cut process errors by \textbf{80\% (50 to 9 per month)} by building \textbf{5 AI workflow automations} with input validation
+    \item Saved \textbf{6 hours per week} by automating lead discovery and outreach drafts with Python Playwright and Claude API
+    \item Exposed spending inefficiencies across \textbf{50+ projects} by building \textbf{2 Azure ETL pipelines} feeding Power BI dashboards
 \end{itemize}
 
 \vspace{6pt}
 
 \textsb{Co-founder and Lead Developer} -- Elapse | \href{https://play.google.com/store/apps/details?id=com.elapseapp.elapse_app&hl=en_CA}{\underline{Google Play}} | \href{https://apps.apple.com/ca/app/elapse/id6596757269}{\underline{App Store}} | \href{https://github.com/elapse-app/elapse}{\underline{GitHub}} \hfill June 2024 -- August 2025 \\
 \begin{itemize}
-  \item Led 4 developers to build an iOS/Android Flutter app serving the \textbf{100k+} member VEX Robotics Competition community with real-time schedules, rankings, and match data, receiving \textbf{3500+ downloads} and a \textbf{5.0-star rating}
-  \item Designed adaptive match times and scouting forms, increasing team productivity at tournaments by \textbf{35\%}
-  \item Integrated Firebase and Cloud Functions to sync data between team members, reducing scouting times by \textbf{30\%}
+    \item Reached \textbf{3500+ downloads} and a \textbf{5.0-star rating} by leading 4 developers to ship a Flutter app for VEX tournaments
+    \item Reduced scouting times by \textbf{30\%} by syncing team data with Firebase and Cloud Functions and predictive match times
 \end{itemize}
 
 \vspace{6pt}
 
 \textsb{V5RC Team Programming Lead} -- Checkmate Robotics | \href{https://youtu.be/Ix-q2ixYf8Y}{\underline{Demo Video}} | \href{https://github.com/16868C/VRC2425-HighStakes}{\underline{GitHub}} \hfill June 2019 -- August 2025 \\
 \begin{itemize}
-  \item Led team of 6 in robot design and library architecture, winning the Create (innovation) Award at VEX Worlds 2024
-  \item Engineered ArkLib, a modular C++ motion control library focused on scalability and flexibility using OOP, qualifying the team to VEX Worlds in \textbf{5 consecutive years} and winning the Think (programming) Award at international events
-  \item Designed and tuned PID and control algorithms, achieving \textbf{1”/1° precision} movements across \textbf{300+ matches}
+    \item Won Create Award at VEX Worlds 2024 among \textbf{82 teams} by leading 6 members in robot design and library architecture
+    \item Qualified to VEX Worlds \textbf{5 straight years} by building ArkLib, a modular C++ motion library \textbf{reused across 16 robots}
 \end{itemize}
 
 % projects section 
@@ -97,9 +116,8 @@ right=0.5in]{geometry}              % specify right page margin
 
 \textsb{Signapse} | \href{https://signapse.health}{\underline{Live Demo}} | \href{https://github.com/emilyyuuu/Signapse}{\underline{GitHub}}
 \begin{itemize}
-    \item Co-built a clinical ASL translator integrating computer vision, a Gemini language layer, and a TimescaleDB backend
-    \item Implemented live recognition of \textbf{9 signs} by applying DTW + k-NN to MediaPipe hand landmarks from \textbf{92 examples}
-    \item Created a 4-flag facial grammar detector (\textbf{100\% on 12 clips}) using rules on MediaPipe blendshapes and head poses
+    \item Co-built an ASL translator for clinical settings integrating computer vision, Gemini language layer, and TimescaleDB
+    \item Implemented live recognition of \textbf{9 signs} from \textbf{92 examples} by applying DTW + k-NN to MediaPipe hand landmarks
 \end{itemize}
 
 \vspace{6pt}
@@ -107,16 +125,16 @@ right=0.5in]{geometry}              % specify right page margin
 \textsb{Redact} | \href{https://redact.sunnoah.ca}{\underline{Live Demo}} | \href{https://github.com/LegendaryArk/Redact}{\underline{GitHub}}
 \begin{itemize}
     \item Built a full-stack face-blurring app (FastAPI, React, Docker) combining RetinaFace detection with OpenCV tracking
-    \item Achieved \textbf{97\% accuracy} by detecting every 5 frames with IoU-tracked fill-in, cutting processing times by \textbf{80\%} to \textbf{4 FPS}
-    \item Designed dual-signal scene-cut detection and EMA smoothing to keep blur boxes stable across shot changes
+    \item Sped up video processing \textbf{5x to 4 FPS} with \textbf{97\% face recall} by pairing RetinaFace every 5th frame with IoU tracking
+    \item Reduced blur-box jitter by \textbf{30\%} across shot changes by designing dual-signal scene cut detection and EMA smoothing
 \end{itemize}
 
 \vspace{6pt}
 
 \textsb{Signal - LLM Agent Simulation Platform} | \href{https://github.com/LegendaryArk/Signal}{\underline{GitHub}}
 \begin{itemize}
-    \item Developed an LLM agent simulation and dashboard in Python and JavaScript with clean separation across a \textbf{3-layer architecture} (simulation kernel, Claude tool-use harness, and FastAPI/SSE server)
-    \item Implemented structured tool-use over Claude API with prompt caching, reducing per-step latency and token cost
+    \item Built \textbf{3-layer} simulation engine, Claude tool-use harness, and FastAPI/SSE server with live results on a dashboard
+    \item Cut LLM cost per call \textbf{55\%} (\$0.0236 to \$0.0106) with no drop in test scores by implementing prompt caching
 \end{itemize}
 
 \vspace{6pt}
@@ -124,7 +142,7 @@ right=0.5in]{geometry}              % specify right page margin
 \textsb{CityWatch} | \href{https://github.com/LegendaryArk/CityWatch}{\underline{GitHub}}
 \begin{itemize}
     \item Led a team of 4 to build a reporting platform using React Native to analyze \textbf{50k+ reports} to identify high-risk zones
-    \item Trained a MobileNetV2 road defect classifier with OpenCV preprocessing pipeline, achieving \textbf{95\%+ accuracy}
+    \item Classified road defects at \textbf{0.95 macro F1} on \textbf{1603 images} by training MobileNetV2 with OpenCV preprocessing
     \item Forecasted 30-365 day risk heatmaps from spatial incident patterns and features stored in a PostGIS database
 \end{itemize}
 
@@ -138,9 +156,9 @@ right=0.5in]{geometry}              % specify right page margin
 % skills section
 \section*{Technical Skills}
 \textsb{Languages:} C/C++, Python, Java, JavaScript, TypeScript, Dart \\[-1pt]
-\textsb{Frameworks/AI:} ROS2, OpenCV, TensorFlow, Claude API, FastAPI, Express.js, Node.js, React Native, Flutter, Matplotlib \\[-1pt]
-\textsb{Data/Backend:} PostgreSQL, MySQL, Microsoft Azure, Firebase, Pandas \\[-1pt]
-\textsb{Developer Tools:} Git, Docker, Linux, GitHub Actions, Foxglove, REST APIs, SSE, Microsoft Power Apps, MS Office \\[-1pt]
-\textsb{Hardware:} Raspberry Pi, STM32 Nucleo, NVIDIA Jetson Nano, Arduino
+\textsb{Frontend \& Mobile:} React, React Native, Flutter, HTML, CSS, Expo \\[-1pt]
+\textsb{Backend \& APIs:} FastAPI, Node.js, Express.js, REST APIs, SSE, Firebase Cloud Functions, Playwright \\[-1pt]
+\textsb{AI \& Computer Vision:} OpenCV, TensorFlow, MediaPipe, RetinaFace, MobileNetV2, DTW, k-NN, Claude, Gemini \\[-1pt]
+\textsb{Data \& Infrastructure:} PostgreSQL, MySQL, PostGIS, TimescaleDB, Firebase, Azure, Power BI, Pandas, Docker, Git, Linux \\[-1pt]
 
 \end{document}
