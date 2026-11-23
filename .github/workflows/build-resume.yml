@@ -31,6 +31,12 @@ jobs:
               with:
                 root_file: embedded.tex
                 working_directory: .
+
+            - name: Compile controls resume
+              uses: xu-cheng/latex-action@v3
+              with:
+                root_file: controls.tex
+                working_directory: .
             
             - name: Checkout sunnoah.ca repo
               uses: actions/checkout@v4
@@ -45,9 +51,11 @@ jobs:
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
                 rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
+                rm -f sunnoah.ca-repo/public/resumes/noah_sun_resume_controls.pdf
                 cp robotics.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                 cp software.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
                 cp embedded.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
+                cp controls.pdf sunnoah.ca-repo/public/resumes/noah_sun_resume_controls.pdf
                 echo "{\"last_updated\": \"$(date -u +'%Y-%m-%d')\"}" > sunnoah.ca-repo/public/resumes/last_updated.json
             
             - name: Commit and push to sunnoah.ca repo
@@ -91,3 +99,4 @@ jobs:
                     sunnoah.ca-repo/public/resumes/noah_sun_resume_robotics.pdf
                     sunnoah.ca-repo/public/resumes/noah_sun_resume_software.pdf
                     sunnoah.ca-repo/public/resumes/noah_sun_resume_embedded.pdf
+                    sunnoah.ca-repo/public/resumes/noah_sun_resume_controls.pdf

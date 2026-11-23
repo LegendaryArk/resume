@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage[default]{sourcesanspro}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+\hypersetup{ pdfnewwindow=true }
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\fontseries{sb}\selectfont\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{6pt}{6pt}
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlist[itemize]{itemsep=-3pt, leftmargin=12pt, topsep=-1pt} %%% Test various topsep values to fix vertical spacing errors
+
+\newcommand{\textsb}[1]{{\fontseries{sb}\selectfont #1}}
+\newcommand{\icon}[1]{\raisebox{0em}{#1}}
+
+% resume starts here
+\begin{document}
+
+\centerline{\huge \textbf{Noah Sun}}
+
+\vspace{-6pt}
+
+% contact information
+\begin{center}
+% \icon{\faPhone}\ (647)~700-5886 \;
+% \icon{\faEnvelope}\ \href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;
+% \icon{\faGlobe}\ \href{https://www.sunnoah.ca}{sunnoah.ca} \;
+% \icon{\faGithub}\ \href{https://github.com/LegendaryArk}{github.com/LegendaryArk} \;
+% \icon{\faLinkedin}\ \href{https://www.linkedin.com/in/sunnoah/}{/in/sunnoah}
+(647)~700-5886 \;|\;
+\href{mailto:nn2sun@uwaterloo.ca}{nn2sun@uwaterloo.ca} \;|\;
+\href{https://www.sunnoah.ca}{\underline{sunnoah.ca}} \;|\;
+\href{https://github.com/LegendaryArk}{\underline{github.com/LegendaryArk}} \;|\;
+\href{https://www.linkedin.com/in/sunnoah/}{\underline{/in/sunnoah}}
+\end{center}
+
+\vspace{-9pt}
+
+% education section
+\section*{Education}
+\textsb{University of Waterloo} -- BASc in Mechatronics Engineering \hfill September 2025 -- April 2030 \\[2pt]
+\hspace{12pt} Relevant Coursework: Algorithms and Data Structures, Circuits, Digital Logic \hfill GPA: 3.92 / 4.00 \\
+
+% experience section
+\section*{Experience}
+
+\textsb{Research Assistant, CL2 Group} -- University of Waterloo \hfill Incoming, January 2027 -- April 2027 \\
+\begin{itemize}
+    \item Will develop and test perception, planning, and control algorithms in ROS2 for 1/10th-scale ground and aerial robots
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Humanoid Perception Software Developer} -- WATonomous \hfill September 2026 -- Present \\
+\begin{itemize}
+    \item Built a ROS2 pipeline that localizes a shuttlecock from RGB-D data using YOLO detection and depth back-projection
+    \item Designed a configurable launch and parameter setup that supports live camera, rosbag replay and model swaps
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Embedded Flight Software Developer} -- Waterloo Aerial Robotics Group \hfill September 2025 -- Present \\
+\begin{itemize}
+    \item Led 4 engineers to build a 32 MB flash translation layer on an STM32 with CRC32 integrity checks across \textbf{8192 records}
+    \item Optimized flash I/O CPU time by \textbf{15\%} with a DMA-driven, non-blocking state machine fed by async RTOS queues
+    \item Verified the driver with \textbf{19 GoogleTest} unit tests with a SPI flash mock, covering round-trip, routing and failure cases
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{V5RC Team Programming Lead} -- Checkmate Robotics | \href{https://youtu.be/Ix-q2ixYf8Y}{\underline{Demo Video}} | \href{https://github.com/16868C/VRC2425-HighStakes}{\underline{GitHub}} \hfill June 2019 -- August 2025 \\
+\begin{itemize}
+    \item Won Create Award at VEX Worlds 2024 among \textbf{82 teams} by leading 6 members in robot design and library architecture
+    \item Qualified to VEX Worlds \textbf{5 straight years} by building ArkLib, an RTOS-based C++ motion library \textbf{reused on 16 robots}
+    \item Achieved \textbf{1"/1° movement precision} across \textbf{300+ matches} using PID control and 100 Hz sensor-fused odometry
+    \item Automated ring sorting and jam recovery in a 100 Hz RTOS task, detecting jams within \textbf{50 ms} using current sensing
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{VEX AI Competition Team Embedded Systems Lead} -- Mi3L Schools \hfill May 2024 -- June 2024 \\
+\begin{itemize}
+    \item Enabled vision-based robot autonomy by building a CRC32-validated C++ serial API for Jetson Nano detections through the Intel RealSense camera, winning the Innovate Award and Skills World Champion at VEX AI Worlds 2024
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Forward Deployed Engineer} -- Ascendance Foundry \hfill January 2026 -- April 2026 \\
+\begin{itemize}
+    \item Cut process errors by \textbf{80\% (50 to 9 per month)} by building \textbf{5 AI workflow automations} with input validation
+    \item Saved \textbf{6 hours per week} by automating lead discovery and outreach drafts with Python Playwright and Claude API
+    \item Consolidated spending data across \textbf{50+ projects} by building \textbf{2 Azure ETL pipelines} feeding Power BI dashboards
+\end{itemize}
+
+% \vspace{6pt}
+
+% \textsb{Co-founder and Lead Developer} -- Elapse | \href{https://play.google.com/store/apps/details?id=com.elapseapp.elapse_app&hl=en_CA}{\underline{Google Play}} | \href{https://apps.apple.com/ca/app/elapse/id6596757269}{\underline{App Store}} | \href{https://github.com/elapse-app/elapse}{\underline{GitHub}} \hfill June 2024 -- August 2025 \\
+% \begin{itemize}
+%     \item Reached \textbf{3500+ downloads} and a \textbf{5.0-star rating} by leading 4 developers to ship a Flutter app for VEX tournaments
+%     \item Reduced scouting time \textbf{30\%} by syncing team data through Firebase Cloud Functions and predicting match start times
+% \end{itemize}
+
+% projects section 
+\section*{Projects}
+
+\textsb{AutoFleet} | \href{https://github.com/LegendaryArk/TIC_AutoFleet}{\underline{GitHub}}
+\begin{itemize}
+    \item Coordinated \textbf{2 robots} with \textbf{0 collisions across 5 trials} by building a central arbiter with space-time A* planning
+    \item Enabled wireless robot control at \textbf{20 ms latency} by programming an ESP32 WiFi-UART bridge with a TCP server
+    \item Reduced localization error by \textbf{30\%} by fusing EMA-smoothed AprilTag poses with wheel odometry
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Autonomous Robot Navigation System} | \href{https://youtu.be/CKogSlk9C5I}{\underline{Demo Video}} | \href{autohttps://github.com/LegendaryArk/wato_asd_training}{\underline{GitHub}}
+\begin{itemize}
+    \item Reached goal in \textbf{20/20} runs using A* on a 0.1 m LiDAR occupancy grid with obstacle inflation and dynamic replanning
+    \item Built Pure Pursuit controller with odometry-fused map memory for persistent global mapping across robot motion
+\end{itemize}
+
+\vspace{6pt}
+
+\textsb{Bare-Metal UART Command Shell (STM32)} | \href{https://github.com/LegendaryArk/terminal-controlled-stm}{\underline{GitHub}}
+\begin{itemize}
+    \item Built a bare-metal command shell for an STM32F446 using only \textbf{9.3 KB of flash and 2.4 KB of RAM}, with no heap
+    \item \textbf{Reduced flash usage by 32\%} by replacing the HAL with register-level drivers for GPIO, USART2, and SysTick
+    \item Verified ring buffer correctness with \textbf{12 ASan/UBSan-checked unit tests}, including randomized model-based tests
+\end{itemize}
+
+% \vspace{6pt}
+
+% \textsb{ArkLib}  \textit{C++, Git} \hfill June 2020 -- July 2025 \\
+% \begin{itemize}
+%   \item Modularized odometry and control algorithms using OOP, enabling seamless integration of \textbf{5+ robot configurations}
+%   \item Enhanced motion algorithms for precision, achieving \textbf{1”/1° accuracy} via improved PID tuning and settling conditions
+%   \item Designed reusable libraries and APIs, cutting integration time by \textbf{30\%} and standardizing code across \textbf{5+ seasons}
+% \end{itemize}
+
+% skills section
+\section*{Technical Skills}
+\textsb{Languages:} C/C++, Python, Java, JavaScript, TypeScript, Dart, MicroPython \\[-1pt]
+\textsb{Robotics \& Controls:} ROS 2, PID, Motor Control, Kinematics, Odometry, Sensor Fusion, Localization, A*, Pure Pursuit \\[-1pt]
+\textsb{Perception \& Mapping:} LiDAR, Occupancy Grids, AprilTags, Intel RealSense, OpenCV, TensorFlow, MediaPipe \\[-1pt]
+\textsb{Embedded \& Hardware:} STM32, ESP32, Jetson, Raspberry Pi, Arduino, RTOS, Bare-Metal, UART, SPI, SolidWorks \\[-1pt]
+\textsb{Software \& Tools:} FastAPI, Node.js, PostgreSQL, Firebase, REST APIs, Git, Linux, Docker, GitHub Actions, Foxglove
+
+\end{document}
